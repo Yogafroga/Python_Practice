@@ -5,7 +5,7 @@ for show in shows:
     print(show)
 
 newshow = input("Enter the name of a new show: ")
-position = int(input("Enter the position at which the show should be inserted (1 to 5): "))
+position = int(input("Enter the position of the show (1 to 5): "))
 
 shows.insert(position - 1, newshow)
 shows = tuple(shows)
