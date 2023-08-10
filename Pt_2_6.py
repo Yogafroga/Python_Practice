@@ -1,5 +1,6 @@
 distance = float(input("Сколько километров хотите проехать на автомобиле? "))
-fuelconsumption = float(input("Сколько литров топлива расходует автомобиль на 100 километров? "))
+fuelconsumption = float(input
+                        ("Сколько литров топлива расходует автомобиль на 100 километров? "))
 tankcapacity = float(input("Сколько литров топлива в вашем баке? "))
 
 fuelneeded = (distance / 100) * fuelconsumption
