@@ -1,14 +1,14 @@
 import random
 
-colors = ["Красный", "Синий", "Зеленый", "Желтый", "Фиолетовый"]
+colors = ["Red", "Blue", "Green", "Yellow", "Orange"]
 selected_color = random.choice(colors)
 
 while True:
-    print("Выберите один из цветов ниже:")
+    print("Choose a color from the following options:")
     for color in colors:
         print(color)
 
-    user_color = input("Введите выбранный цвет: ")
+    user_color = input("Enter your choice: ")
 
     if user_color == selected_color:
         print("Отлично!")
