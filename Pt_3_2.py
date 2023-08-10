@@ -1,8 +1,9 @@
 def fibonacci(n):
     fiblist = [0, 1]  # список, содержащий первые два числа Фибоначчи
-    while fiblist-1 < n:
-        fiblist.append(fiblist-1 + fiblist[-2])
-    return fiblist:-1
+    while fiblist[-1] < n:
+        fiblist.append(fiblist[-1] + fiblist[-2])
+    return fiblist
+
 
 example = fibonacci(100)
 print(example)
