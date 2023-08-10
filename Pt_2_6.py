@@ -2,7 +2,7 @@ distance = float(input("Сколько километров хотите про�
 fuelconsumption = float(input("Сколько литров топлива расходует автомобиль на 100 километров? "))
 tankcapacity = float(input("Сколько литров топлива в вашем баке? "))
 
-fuelneeded = (distance/100) * fuelconsumption
+fuelneeded = (distance / 100) * fuelconsumption
 
 if fuelneeded <= tankcapacity:
     print("Вы сможете проехать желаемое расстояние.")
