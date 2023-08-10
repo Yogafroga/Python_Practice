@@ -15,4 +15,4 @@ while True:
         break
     else:
         print("Неверно! Попробуйте еще раз.")
-        print("Подсказка: Название цвета начинается на букву", selected_color[0])
+        print("Подсказка: Название цвета на букву", selected_color[0])
