@@ -10,7 +10,7 @@ def findmaxdigitposition(number):
     
     # find the forward position of the maximum digit
     forwardposition = numberstr.index(maxdigit)
-    
+
     # return both positions
     return len(numberstr) - reverseposition, forwardposition + 1
 
