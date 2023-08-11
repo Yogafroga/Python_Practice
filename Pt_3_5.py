@@ -1,6 +1,6 @@
 def get_non_prime_numbers(start, end):
-    non_prime_numbers = [num for num in range(start, end + 1) if any(
-     num % i == 0 for i in range(2, int(num ** 0.5) + 1))]
+    non_prime_numbers = [num for num in range(start, end + 1)
+                         if any(num % i == 0 for i in range(2, int(num ** 0.5) + 1))]
 
     return non_prime_numbers
 
