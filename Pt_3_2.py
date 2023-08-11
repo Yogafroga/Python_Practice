@@ -1,3 +1,5 @@
-fibonacci = lambda n: [0, 1] + [fibonacci(i-2) + fibonacci(i-1) for i in range(2, n)]
+from functools import reduce
 
-print(fibonacci(10))
+fib = lambda n: reduce(lambda x, _: x+[x[-1]+x[-2]], range(n-2), [0, 1])
+
+print(fib(10))
