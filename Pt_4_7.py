@@ -11,7 +11,7 @@ def permutations(lst):
     all_permutations = []
     for i in range(len(lst)):
         current_element = lst[i]
-        remaining_elements = lst[:i] + lst[i+1:]
+        remaining_elements = lst[:i] + lst[i + 1:]
         for p in permutations(remaining_elements):
             all_permutations.append([current_element] + p)
 
