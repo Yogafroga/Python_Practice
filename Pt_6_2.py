@@ -7,7 +7,7 @@ import csv
 class SteamSpider(CrawlSpider):
     name = "steam"
     allowed_domains = ['store.steampowered.com']
-    start_urls = ['https://store.steampowered.com/search/?category1=998&filter=topsellers&ndl=1']
+    start_urls = ['https://store.steampowered.com/search/?category1=998&filter=globaltopsellers&ndl=1']
     custom_settings = {
         'CLOSESPIDER_PAGECOUNT': 1500
     }
@@ -17,11 +17,11 @@ class SteamSpider(CrawlSpider):
 
     def parse_item(self, response):
         tags = response.xpath("//a[@class='app_tag']")
+        tag_text = [tag.xpath("text()").get().strip() for tag in tags]
 
-        tag_text = []
-        for tag in tags:
-            tag_text.append(tag.xpath("text()").get().strip())
-
-        with open('steam_tags.csv', 'a', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(tag_text)
+        if tag_text:  # Check if there are tags before writing
+            game_title = response.xpath("//div[@class='apphub_AppName']/text()").get()
+            if game_title:
+                with open('steam_tags.csv', 'a', newline='') as file:
+                    writer = csv.writer(file)
+                    writer.writerow([game_title] + tag_text)  # Write game title and tags on the same row
